@@ -26,6 +26,7 @@
     "eslint-config-prettier": "^7.2.0",
     "html-webpack-plugin": "^4.5.1",
     "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
     "prettier": "2.2.1",
     "style-loader": "^2.0.0",
     "webpack": "^5.18.0",
@@ -35,7 +36,18 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "prettier --write --ignore-unknown && eslint --fix ./src/*"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{html,css,less,ejs,json}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
