@@ -1,5 +1,5 @@
 import "./style.css";
 
-let hello = "hola";
+let hello = "hola mundo";
 
 console.log(hello);
