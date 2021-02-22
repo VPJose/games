@@ -1,5 +1,8 @@
-import "./style.css";
+import "./style.scss";
 
-let hello = "hola mundo estoy usando webpack";
+const boton = document.getElementById("boton");
 
-console.log(hello);
+boton.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log("Hola Mudo estoy usando Webpack");
+});
